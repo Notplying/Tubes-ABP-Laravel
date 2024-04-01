@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('tahun');
             $table->string('model');
             $table->string('warna');
-            $table->string('kategori');
-            $table->foreign('kategori')->references('nama')->on('kategoris');
+            $table->unsignedBigInteger('kategori_id');
+            $table->foreign('kategori_id')->references('id')->on('kategoris');
             $table->timestamps();
         });
     }
